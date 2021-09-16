@@ -26,5 +26,5 @@ export const If: FC<ComponentWithConditionProps> = ({ condition, children }) => 
 
   const conditionResult = getConditionResult(condition);
 
-  return <Fragment>{(React.Children.toArray(children) as ReactElement[]).find((c) => (c.type !== Else) !== !conditionResult) || null}</Fragment>;
+  return <Fragment>{(React.Children.toArray(children) as ReactElement[]).find((c) => (c.type !== (<Else />).type) !== !conditionResult) || null}</Fragment>;
 };
